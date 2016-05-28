@@ -4,7 +4,6 @@ using System.Collections;
 public class FallingNumber : MonoBehaviour {
 
     public int value;
-
 	// Use this for initialization
 	void Start () {
 
@@ -12,8 +11,19 @@ public class FallingNumber : MonoBehaviour {
 
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if(coll.gameObject.name=="floor")
+        GameObject.Destroy(gameObject);
+
+    }
+
+    void OnMouseDown()
+    {
+        // this object was clicked - do something
+        Destroy(this.gameObject);
+    }
 }

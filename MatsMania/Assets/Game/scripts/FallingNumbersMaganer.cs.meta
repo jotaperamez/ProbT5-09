@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: 3441834cb8183aa44a90371d2805bfa4
-timeCreated: 1464446121
+timeCreated: 1464465341
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ficha: {instanceID: 0}
+  - sprite: {instanceID: 0}
+  - camara: {instanceID: 0}
+  - topLeft: {fileID: 458198, guid: 4e8a84544526d174a81358df40b6db3c, type: 2}
+  - topLRight: {fileID: 490732, guid: fb87bb5df34eb2e47ad2721fea2ab64d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
