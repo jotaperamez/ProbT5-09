@@ -3,12 +3,11 @@ using System.Collections;
 
 public class FallingNumbersMaganer : MonoBehaviour
 {
-
-
+    
     public GameObject ficha;
+    public GameObject ev;
     public Sprite sprite;
     public Camera camara;
-
 
     private RaycastHit rHit;
 
@@ -22,6 +21,7 @@ public class FallingNumbersMaganer : MonoBehaviour
     void Start()
     {
 
+        
         StartCoroutine(createFicha());
 
     }
@@ -29,8 +29,11 @@ public class FallingNumbersMaganer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+           
+      
 
-
+       
     }
 
    
@@ -53,16 +56,19 @@ public class FallingNumbersMaganer : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log(Event.currentEval);
             GameObject aux = GameObject.Instantiate(ficha) as GameObject;
-
             int aux2 = Random.Range(0, 100);
 
-
-
-            aux.GetComponent<FallingNumber>().value = aux2;
+            aux.GetComponent<FallingNumber>().setValue(aux2);
             aux.GetComponent<TextMesh>().text = aux2.ToString();
+
+            
+
             aux.transform.position = new Vector2(updateX(), 5);
-            yield return new WaitForSeconds(0.75F);
+            yield return new WaitForSeconds(1.5F);
+            
+
         }
 
     }

@@ -63,9 +63,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game\scripts\AcercaDe.cs" />
+    <Compile Include="Assets\Game\scripts\EventManager.cs" />
     <Compile Include="Assets\Game\scripts\FallingNumber.cs" />
     <Compile Include="Assets\Game\scripts\FallingNumbersMaganer.cs" />
+    <Compile Include="Assets\Game\scripts\GUIManager.cs" />
+    <Compile Include="Assets\Game\scripts\GameManager.cs" />
+    <Compile Include="Assets\Game\scripts\Instruciones.cs" />
     <Compile Include="Assets\Game\scripts\ManageBlackboard.cs" />
+    <Compile Include="Assets\Game\scripts\Objets\Event.cs" />
+    <Compile Include="Assets\Game\scripts\jugarM.cs" />
+    <Compile Include="Assets\Game\scripts\menu.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
