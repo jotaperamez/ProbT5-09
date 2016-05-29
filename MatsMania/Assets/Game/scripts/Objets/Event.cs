@@ -6,7 +6,7 @@ public class Event : MonoBehaviour {
     
     public static int currentEval;
     private float change;
-    private int lastEval;
+    private static int lastEval;
 
     // Use this for initialization
     void Start() {
@@ -51,16 +51,22 @@ public class Event : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-      if(Time.time >= change + 25f)
-        {
+        
+
+    }
+
+
+    public static void setState()
+    {
+     
             lastEval = currentEval;
             currentEval = Random.Range(0, 3);
             if (currentEval == lastEval)
                 currentEval = (currentEval + 1) % 4;
-            change = Time.time;
-        }
+            
 
     }
+
     public enum Eval
     {
        Raiz , Impar, Primo, Par

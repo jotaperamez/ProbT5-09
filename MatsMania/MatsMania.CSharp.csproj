@@ -72,6 +72,7 @@
     <Compile Include="Assets\Game\scripts\Instruciones.cs" />
     <Compile Include="Assets\Game\scripts\ManageBlackboard.cs" />
     <Compile Include="Assets\Game\scripts\Objets\Event.cs" />
+    <Compile Include="Assets\Game\scripts\ScreenMessages\ScreenMessagesController.cs" />
     <Compile Include="Assets\Game\scripts\jugarM.cs" />
     <Compile Include="Assets\Game\scripts\menu.cs" />
   </ItemGroup>

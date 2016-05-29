@@ -3,7 +3,10 @@ using System.Collections;
 
 public class FallingNumbersMaganer : MonoBehaviour
 {
-    
+
+    int contador = 0;
+    public static int puntuador;
+
     public GameObject ficha;
     public GameObject ev;
     public Sprite sprite;
@@ -21,7 +24,11 @@ public class FallingNumbersMaganer : MonoBehaviour
     void Start()
     {
 
-        
+        //INIT SCORE
+        puntuador = 0;
+
+        Event.setState();
+
         StartCoroutine(createFicha());
 
     }
@@ -56,7 +63,11 @@ public class FallingNumbersMaganer : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log(Event.currentEval);
+
+
+            ScreenMessagesController.instance.SetMessageGameState(Event.currentEval);
+            
+
             GameObject aux = GameObject.Instantiate(ficha) as GameObject;
             int aux2 = Random.Range(0, 100);
 
@@ -66,8 +77,22 @@ public class FallingNumbersMaganer : MonoBehaviour
             
 
             aux.transform.position = new Vector2(updateX(), 5);
+            contador++;
+
+
+            ///SET CONTADOR PARA CAMBIO DE REGLA
+            if (contador >= 20)
+            {
+                yield return new WaitForSeconds(5F);
+                contador = 0;
+                Event.setState();
+                ScreenMessagesController.instance.SetMessageGameState(Event.currentEval);
+                Debug.Log(Event.currentEval);
+            }
+            Debug.Log(Event.currentEval);
             yield return new WaitForSeconds(1.5F);
             
+
 
         }
 

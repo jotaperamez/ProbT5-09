@@ -24,7 +24,7 @@ public class FallingNumber : MonoBehaviour {
             GameObject.Destroy(gameObject);
         if (Event.Evaluate(value))
         {
-            Application.LoadLevel(1);
+            Application.LoadLevel(0);
         }
 
 
@@ -35,9 +35,14 @@ public class FallingNumber : MonoBehaviour {
         // this object was clicked - do something
         Debug.Log(Event.currentEval);
         Destroy(this.gameObject);
+
         if (!Event.Evaluate(value))
         {
-            Application.LoadLevel(1);
+            Application.LoadLevel(0);
         }
+
+         FallingNumbersMaganer.puntuador++;
+        int aux = FallingNumbersMaganer.puntuador;
+        ScreenMessagesController.instance.setScore(aux);
     }
 }
