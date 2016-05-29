@@ -71,6 +71,6 @@ public class Event : MonoBehaviour {
     {
        Raiz , Impar, Primo, Par
     }
-    public int[] primo = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 };
+    public int[] primo = { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 };
     public static ArrayList primos = new ArrayList();
 }

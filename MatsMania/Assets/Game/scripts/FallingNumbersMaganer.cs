@@ -23,11 +23,15 @@ public class FallingNumbersMaganer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+    
+        Physics2D.gravity = new Vector2(Physics2D.gravity.x, -9.8f);
         //INIT SCORE
         puntuador = 0;
 
         Event.setState();
+
+
+        ScreenMessagesController.instance.SetMessageGameState(1);
 
         StartCoroutine(createFicha());
 
@@ -63,11 +67,7 @@ public class FallingNumbersMaganer : MonoBehaviour
     {
         while (true)
         {
-
-
-            ScreenMessagesController.instance.SetMessageGameState(Event.currentEval);
             
-
             GameObject aux = GameObject.Instantiate(ficha) as GameObject;
             int aux2 = Random.Range(0, 100);
 
@@ -75,15 +75,17 @@ public class FallingNumbersMaganer : MonoBehaviour
             aux.GetComponent<TextMesh>().text = aux2.ToString();
 
             
+            
 
             aux.transform.position = new Vector2(updateX(), 5);
             contador++;
 
 
             ///SET CONTADOR PARA CAMBIO DE REGLA
-            if (contador >= 20)
+            if (contador > 15)
             {
-                yield return new WaitForSeconds(5F);
+                Physics2D.gravity = new Vector2(Physics2D.gravity.x, -9.8f);
+                yield return new WaitForSeconds(3.5F);
                 contador = 0;
                 Event.setState();
                 ScreenMessagesController.instance.SetMessageGameState(Event.currentEval);

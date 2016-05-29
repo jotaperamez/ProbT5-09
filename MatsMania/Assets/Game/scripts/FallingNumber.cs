@@ -7,7 +7,7 @@ public class FallingNumber : MonoBehaviour {
     public int value;
 	// Use this for initialization
 	void Start () {
-
+        
 	}
 
     public void setValue(int entrada)
@@ -24,7 +24,7 @@ public class FallingNumber : MonoBehaviour {
             GameObject.Destroy(gameObject);
         if (Event.Evaluate(value))
         {
-            Application.LoadLevel(0);
+            Application.LoadLevel(4);
         }
 
 
@@ -35,14 +35,15 @@ public class FallingNumber : MonoBehaviour {
         // this object was clicked - do something
         Debug.Log(Event.currentEval);
         Destroy(this.gameObject);
-
+        Physics2D.gravity = new Vector2(Physics2D.gravity.x,Physics2D.gravity.y-6.5f);
         if (!Event.Evaluate(value))
         {
-            Application.LoadLevel(0);
+            Application.LoadLevel(4);
         }
 
          FallingNumbersMaganer.puntuador++;
         int aux = FallingNumbersMaganer.puntuador;
         ScreenMessagesController.instance.setScore(aux);
+
     }
 }
